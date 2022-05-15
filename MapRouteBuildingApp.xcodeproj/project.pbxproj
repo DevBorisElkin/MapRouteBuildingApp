@@ -13,6 +13,7 @@
 		52791E2528318A7A00A14B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52791E2328318A7A00A14B21 /* Main.storyboard */; };
 		52791E2728318A7B00A14B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52791E2628318A7B00A14B21 /* Assets.xcassets */; };
 		52791E2A28318A7B00A14B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52791E2828318A7B00A14B21 /* LaunchScreen.storyboard */; };
+		52791E3428318B6100A14B21 /* TaskDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791E3328318B6100A14B21 /* TaskDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52791E2628318A7B00A14B21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52791E2928318A7B00A14B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52791E2B28318A7B00A14B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52791E3328318B6100A14B21 /* TaskDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				52791E2628318A7B00A14B21 /* Assets.xcassets */,
 				52791E2828318A7B00A14B21 /* LaunchScreen.storyboard */,
 				52791E2B28318A7B00A14B21 /* Info.plist */,
+				52791E3328318B6100A14B21 /* TaskDescription.swift */,
 			);
 			path = MapRouteBuildingApp;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				52791E2228318A7A00A14B21 /* ViewController.swift in Sources */,
 				52791E1E28318A7A00A14B21 /* AppDelegate.swift in Sources */,
 				52791E2028318A7A00A14B21 /* SceneDelegate.swift in Sources */,
+				52791E3428318B6100A14B21 /* TaskDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
