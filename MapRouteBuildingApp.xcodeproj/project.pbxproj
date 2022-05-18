@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524FE7212834BADB00E3E59C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FE7202834BADB00E3E59C /* Alert.swift */; };
 		52791E1E28318A7A00A14B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791E1D28318A7A00A14B21 /* AppDelegate.swift */; };
 		52791E2028318A7A00A14B21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791E1F28318A7A00A14B21 /* SceneDelegate.swift */; };
 		52791E2228318A7A00A14B21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52791E2128318A7A00A14B21 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524FE7202834BADB00E3E59C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		52791E1A28318A7A00A14B21 /* MapRouteBuildingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapRouteBuildingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52791E1D28318A7A00A14B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52791E1F28318A7A00A14B21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				52791E1D28318A7A00A14B21 /* AppDelegate.swift */,
 				52791E1F28318A7A00A14B21 /* SceneDelegate.swift */,
 				52791E2128318A7A00A14B21 /* ViewController.swift */,
+				524FE7202834BADB00E3E59C /* Alert.swift */,
 				52791E2328318A7A00A14B21 /* Main.storyboard */,
 				52791E2628318A7B00A14B21 /* Assets.xcassets */,
 				52791E2828318A7B00A14B21 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				52791E2228318A7A00A14B21 /* ViewController.swift in Sources */,
 				52791E1E28318A7A00A14B21 /* AppDelegate.swift in Sources */,
 				52791E2028318A7A00A14B21 /* SceneDelegate.swift in Sources */,
+				524FE7212834BADB00E3E59C /* Alert.swift in Sources */,
 				52791E3428318B6100A14B21 /* TaskDescription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

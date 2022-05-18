@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "button_route"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = true
         return button
     }()
     
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "button_reset"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isHidden = true
         return button
     }()
     
@@ -52,7 +54,12 @@ class ViewController: UIViewController {
     }
 
     @objc func addAddressButtonTapped(){
-        print("TapAdd")
+        //print("TapAdd")
+        alertAddAddress(title: "Add", placeholder: "Enter Address") { (text) in
+            print(text)
+        }
+        
+        //alertError(title: "Error", message: "Something went wrong")
     }
     
     @objc func routeButtonTapped(){
@@ -103,21 +110,6 @@ extension ViewController {
     }
     
 }
-
-//var testClassVariable : TestClass{
-//    print("1) Created variable of a test class")
-//    var variable:TestClass = TestClass()
-//    variable.number = 2
-//    return variable
-//}
-//
-//class TestClass{
-//    var number:Int = 0
-//
-//    init(){
-//        print("2) called initializer of TestClass")
-//    }
-//}
 
 
 
