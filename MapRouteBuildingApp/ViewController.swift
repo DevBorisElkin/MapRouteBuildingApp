@@ -44,6 +44,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
+        
         setConstraints()
         
         //print(testClassVariable.number)
@@ -65,11 +68,22 @@ class ViewController: UIViewController {
     }
     
     @objc func routeButtonTapped(){
-        print("TapRoute")
+        
+        for index in 0...annotationsArray.count - 2{
+            
+            createDirectionRequest(startCoordinate: annotationsArray[index].coordinate, destinationCoordinate: annotationsArray[index + 1].coordinate)
+        }
+        
+        mapView.showAnnotations(annotationsArray, animated: true)
+        
     }
     
     @objc func resetButtonTapped(){
-        print("TapReset")
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        annotationsArray = [MKPointAnnotation]()
+        routeButton.isHidden = true
+        resetButton.isHidden = true
     }
     
     private func setupPlacemark(addressPlace : String){
@@ -107,7 +121,60 @@ class ViewController: UIViewController {
             mapView.showAnnotations(annotationsArray, animated: true)
         }
     }
+    
+    private func createDirectionRequest(startCoordinate: CLLocationCoordinate2D, destinationCoordinate: CLLocationCoordinate2D){
+        
+        let startLocation = MKPlacemark(coordinate: startCoordinate)
+        let destinationLocation = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startLocation)
+        request.destination = MKMapItem(placemark: destinationLocation)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        
+        let direction = MKDirections(request: request)
+        direction.calculate { (response, error) in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response else{
+                self.alertError(title: "Error", message: "Route is unavailable")
+                return
+            }
+            
+            print("found \(response.routes.count) routes")
+            
+            var minRoute = response.routes[0]
+            
+            if(response.routes.count > 0){
+                var counter = 0
+                for route in response.routes{
+                    print("rounte \(counter) distance is \(route.distance)")
+                    minRoute = route.distance < minRoute.distance ? route : minRoute
+                    counter += 1
+                }
+            }
+            
+            self.mapView.addOverlay(minRoute.polyline)
+        }
+        
+    }
 
+}
+
+extension ViewController : MKMapViewDelegate{
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .red
+        return renderer
+    }
+    
 }
 
 extension ViewController {
